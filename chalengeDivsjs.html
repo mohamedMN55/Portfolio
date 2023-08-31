@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      button {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100px;
+        height: 100px;
+
+        margin: 5px;
+      }
+
+      .big {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+      }
+      #red {
+        background-color: rgb(236, 8, 8);
+      }
+      #green {
+        background-color: green;
+      }
+      #violet {
+        background-color: violet;
+      }
+      #black {
+        background-color: black;
+      }
+    </style>
+    <title>Div Layout</title>
+  </head>
+  <body>
+    <button id="red" class="buttonC">red</button>
+    <button id="green" class="buttonC">green</button>
+    <button id="violet" class="buttonC">violet</button>
+    <button id="black" class="buttonC">black</button>
+    <div class="big" id="big"></div>
+    <script>
+      buttonC = document.querySelectorAll(".buttonC");
+
+      buttonC.forEach((button) => {
+        button.addEventListener("click", () => {
+          color = button.id;
+        });
+      });
+      big = document.getElementById("big");
+      big.addEventListener("click", () => {
+        if (color) {
+          big.style.backgroundColor = color;
+        }
+      });
+    </script>
+  </body>
+</html>
